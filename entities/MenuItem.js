@@ -18,7 +18,7 @@ const MenuItem = sequelize.define('MenuItem', {
         defaultValue: 0.00,
     },
 
-    //bellow is a bunch of boolean values to filter based on dietary restrictions
+    //below is a bunch of boolean values to filter based on dietary restrictions
     isAllergen: {
         type: DataTypes.BOOLEAN,
         allowNull: false,

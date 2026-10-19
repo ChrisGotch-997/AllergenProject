@@ -6,14 +6,15 @@ const sequelize = require('../db');
 const Ingredient = sequelize.define('Ingredient', {
     name: {
         type:DataTypes.STRING,
-        allowNull: false, //This forces the column to not be empty
+        allowNull: false, //Name of ingredient must be shown
     },
     supplier :{
         type: DataTypes.STRING,
     },
+    //Boolean values to flag based on dietary restrictions
     isHalal: {
         type: DataTypes.BOOLEAN,
-        allowNull: false,
+        allowNull: false, // 
         defaultValue: false,
     },
     isVegetarian: {
