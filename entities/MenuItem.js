@@ -10,6 +10,7 @@ const MenuItem = sequelize.define('MenuItem', {
     description: {
         type: DataTypes.String,
         allowNull: true,
+        defaultValue: null, //description is optional
     },
     price: {
         type: DataTypes.DECIMAL(10, 2),
