@@ -1,6 +1,6 @@
-//Import modules
+
 //Sequelize = orm, DataTypes defines data types for table columns.
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 
 //Connection to DB
 //Creates new SQlite db file named allergen.db
