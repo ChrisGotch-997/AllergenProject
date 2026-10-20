@@ -1,11 +1,12 @@
 // Defining entity relationships
 // Our relationships need correct paths
 const User = require('./entities/User');
-const Allergen = require('../Allergens');
-const MenuItem = require('../MenuItem');
-const Ingredient = require('../Ingredient');
-const IngredientAllergen = require('./entities/IngredientAllergen');
+const Allergen = require('./entities/Allergens');
+const MenuItem = require('./entities/MenuItem');
+const Ingredient = require('./entities/Ingredient');
+
 const MenuItemIngredient = require('./entities/MenuItemIngredient');
+const IngredientAllergen = require('./entities/IngredientAllergen');
 
 //User to Allergy (many to many)
 User.belongsToMany(Allergen, {
@@ -24,7 +25,7 @@ Allergen.belongsToMany(User, {
 
  //Menu Item to Ingredients through MenuItemIngredient
  MenuItem.hasMany(MenuItemIngredient, {
-    foreignKey: 'menuItemID',
+    foreignKey: 'menuItemId',
     onDelete: 'CASCADE'
  });
  MenuItemIngredient.belongsTo(MenuItem, {
@@ -54,8 +55,8 @@ Allergen.belongsToMany(User, {
  });
 
  //Ingredient to allergen (Many to one) through IngredientAllergen
- Allergen.hasMany(Ingredient, {
-    foreignKey: 'allergenID',
+ Allergen.hasMany(IngredientAllergen, {
+    foreignKey: 'allergenId',
     onDelete: 'CASCADE' 
  });
  IngredientAllergen.belongsTo(Allergen, {
@@ -67,7 +68,7 @@ Allergen.belongsToMany(User, {
    onDelete: 'CASCADE'
  });
  IngredientAllergen.belongsTo(Ingredient, {
-    foreignKey: 'ingredientID'
+    foreignKey: 'ingredientId'
  });
 
 

@@ -38,4 +38,4 @@ const Ingredient = sequelize.define('Ingredient', {
     },
 });
 
-module.exports = User;
+module.exports = Ingredient;

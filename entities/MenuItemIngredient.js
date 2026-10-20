@@ -5,4 +5,4 @@ const sequelize = require('../db');
 //table to join
 const MenuItemIngredient = sequelize.define('MenuItemIngredient', {});
 
-exports = MenuItemIngredient;
+module.exports = MenuItemIngredient;
