@@ -8,7 +8,7 @@ const MenuItem = sequelize.define('MenuItem', {
         allowNull: false, //if it's on the menu it must have a name
     },
     description: {
-        type: DataTypes.String,
+        type: DataTypes.STRING,
         allowNull: true,
         defaultValue: null, //description is optional
     },
@@ -17,18 +17,15 @@ const MenuItem = sequelize.define('MenuItem', {
         allowNull: false,
         defaultValue: 0.00,
     },
-
-    //bellow is a bunch of boolean values to filter based on dietary restrictions
-    isAllergen: {
+    portionSize: {
+        type: DataTypes.FLOAT,
+        allowNull: true,
+    },
+    isAvailable: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
-        defaultValue: false,
     },
-    hasDairy: {
-        type: DataTypes.BOOLEAN,
-        allowNull: false,
-        defaultValue: false,
-    },
+    //below is a bunch of boolean values to filter based on dietary restrictions
     isHalal: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
@@ -39,6 +36,10 @@ const MenuItem = sequelize.define('MenuItem', {
         allowNull: false,
         defaultValue: false,
     },
+    isGlutenFree: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+    }
 });
 
 module.exports = MenuItem;
